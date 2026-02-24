@@ -68,7 +68,7 @@ export default function HRManagementPage() {
       <section className="bg-black">
         <AnimatedDiv id="hr-management-overview" className="container mx-auto max-w-2xl md:max-w-3xl">
           <div className="text-center my-16 px-4 md:px-0">
-            <h2 className="max-w-2xl text-2xl tracking-tighter font-geist bg-clip-text text-transparent mx-auto md:text-5xl bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] uppercase mb-4">
+            <h2 className="max-w-2xl text-2xl tracking-tighter bg-clip-text text-transparent mx-auto md:text-5xl bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] uppercase mb-4">
               {titleOverview1}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-orange-200">
                 {titleOverview2}

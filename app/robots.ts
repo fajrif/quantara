@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://quantarastrategic.com/sitemap.xml",
+    sitemap: "https://quantara.id/sitemap.xml",
   };
 }

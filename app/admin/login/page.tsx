@@ -79,7 +79,7 @@ export default function LoginPage() {
                             <Input
                                 id="email"
                                 type="email"
-                                placeholder="admin@quantarastrategic.com"
+                                placeholder="connect@quantara.id"
                                 {...register('email')}
                                 disabled={isLoading}
                             />

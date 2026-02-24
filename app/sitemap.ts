@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const baseUrl = "https://quantarastrategic.com";
+const baseUrl = "https://quantara.id";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

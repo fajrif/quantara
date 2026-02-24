@@ -86,10 +86,10 @@ export default function ContactPage() {
                     <div>
                       <div className="text-white font-medium text-sm mb-1">Email</div>
                       <a
-                        href="mailto:admin@quantarastrategic.com"
+                        href="mailto:connect@quantara.id"
                         className="text-white/80 font-light hover:text-white/80 transition-colors"
                       >
-                        admin@quantarastrategic.com
+                        connect@quantara.id
                       </a>
                     </div>
                   </div>

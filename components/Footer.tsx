@@ -5,7 +5,7 @@ import { LinkedInLogo } from "@/components/ui/custom-icons"
 
 export function Footer() {
   return (
-    <footer className="relative font-mono bg-sk-sea-shade text-white overflow-hidden">
+    <footer className="relative bg-sk-sea-shade text-white overflow-hidden">
       {/* Background Wave SVG */}
       <Image
         src="/images/footer_wave_desktop.svg"
@@ -30,7 +30,7 @@ export function Footer() {
                 className="h-12 w-auto"
               />
             </div>
-            <p className="hidden md:block font-host-grotesk text-gray-300">
+            <p className="hidden md:block text-gray-300">
               Mitra terpercaya Anda dalam Solusi Digital dan Inovasi.
             </p>
           </div>
@@ -106,9 +106,9 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-white uppercase">Kontak Kami</h3>
             <ul className="space-y-3 flex flex-col items-center md:items-start">
               <li>
-                <a href="mailto:admin@quantarastrategic.com" className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors">
+                <a href="mailto:connect@quantara.id" className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors">
                   <Mail size={16} />
-                  <span>admin@quantarastrategic.com</span>
+                  <span>connect@quantara.id</span>
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-300">

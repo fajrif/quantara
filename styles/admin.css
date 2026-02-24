@@ -59,8 +59,8 @@
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
     --radius-xl: calc(var(--radius) + 4px);
-    --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
-    --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+    --font-inter: var(--font-inter), sans-serif;
+    --font-header: var(--font-inter), sans-serif;
 }
 
 @layer base {
@@ -69,7 +69,7 @@
     }
 
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-foreground font-inter;
     }
 }
 

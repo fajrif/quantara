@@ -1,27 +1,25 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono, Host_Grotesk } from "next/font/google"
+import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 
-const geist = Geist({ subsets: ["latin"], variable: '--font-geist-sans' })
-const geistMono = Geist_Mono({ subsets: ["latin"], variable: '--font-geist-mono' })
-const hostGrotesk = Host_Grotesk({ subsets: ["latin"], variable: '--font-host-grotesk' })
+const inter = Inter({ subsets: ["latin"], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-    title: "PT Quantara Strategic - Mitra Teknologi Terpercaya",
-    description: "Perusahaan yang unggul dalam menyediakan layanan Teknologi Informasi.",
-    metadataBase: new URL("https://quantarastrategic.com"),
+    title: "Quantara Strategic - Connecting Capital with Strategy",
+    description: "Quantara Strategic operates as both deal-maker and strategic partner",
+    metadataBase: new URL("https://quantara.id"),
     openGraph: {
-        title: "PT Quantara Strategic - Mitra Teknologi Terpercaya",
-        description: "Perusahaan yang unggul dalam menyediakan layanan Teknologi Informasi.",
-        url: "https://quantarastrategic.com",
-        siteName: "PT Quantara Strategic",
+        title: "Quantara Strategic - Connecting Capital with Strategy",
+        description: "Quantara Strategic operates as both deal-maker and strategic partner",
+        url: "https://quantara.id",
+        siteName: "Quantara Strategic",
         images: [
             {
-                url: "https://quantarastrategic.com/images/og-image.png",
+                url: "https://quantara.id/images/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "PT Quantara Strategic Logo",
+                alt: "Quantara Strategic Logo",
                 type: "image/png",
             },
         ],
@@ -30,9 +28,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "PT Quantara Strategic - Mitra Teknologi Terpercaya",
-        description: "Perusahaan yang unggul dalam menyediakan layanan Teknologi Informasi.",
-        images: ["https://quantarastrategic.com/images/og-image.png"],
+        title: "Quantara Strategic - Connecting Capital with Strategy",
+        description: "Quantara Strategic operates as both deal-maker and strategic partner",
+        images: ["https://quantara.id/images/og-image.png"],
     },
     icons: {
         icon: [
@@ -59,8 +57,8 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en">
-            <body className={`${geist.className} ${geistMono.variable} ${hostGrotesk.variable} antialiased`}>
+        <html lang="en" className={inter.variable}>
+            <body className={`${inter.className} antialiased`}>
                 {children}
                 <Analytics />
             </body>

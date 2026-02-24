@@ -125,7 +125,7 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ s
                             Kirimkan CV dan portfolio Anda ke tim HR kami.
                         </p>
                         <a
-                            href="mailto:career@quantarastrategic.com"
+                            href="mailto:career@quantara.id"
                             className="inline-flex items-center gap-2 w-full justify-center px-6 py-3 rounded-full bg-white text-black font-light hover:bg-white/90 transition-colors"
                         >
                             <Mail size={16} />

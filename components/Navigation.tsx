@@ -34,7 +34,7 @@ export function Navigation() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
-        ? "bg-sk-gold shadow-md"
+        ? "bg-primary/80 backdrop-blur-lg shadow-sm"
         : "bg-transparent"
         }`}
     >
@@ -45,7 +45,7 @@ export function Navigation() {
         )}>
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src={isScrolled ? "/images/logo.png" : "/images/logo-white.png"}
+              src="/images/logo-white.png"
               alt="PT Quantara Strategic"
               width={180}
               height={50}
@@ -68,7 +68,7 @@ export function Navigation() {
                     className={cn(
                       "uppercase transition-all font-medium text-sm px-3 py-2 rounded-md",
                       isScrolled
-                        ? "text-black hover:text-primary hover:bg-black/5 focus:text-primary focus:bg-black/5"
+                        ? "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
                         : "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
                     )}
                   >
@@ -84,7 +84,7 @@ export function Navigation() {
                     className={cn(
                       "uppercase transition-all font-medium text-sm px-3 py-2 rounded-md",
                       isScrolled
-                        ? "text-black hover:text-primary hover:bg-black/5 focus:text-primary focus:bg-black/5"
+                        ? "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
                         : "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
                     )}
                   >
@@ -98,7 +98,7 @@ export function Navigation() {
                   className={cn(
                     "uppercase transition-all font-medium px-3 py-2 rounded-md bg-transparent",
                     isScrolled
-                      ? "text-black hover:text-primary hover:bg-black/5 focus:text-primary focus:bg-black/5 data-[state=open]:bg-black/5"
+                      ? "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10 data-[state=open]:bg-white/10"
                       : "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10 data-[state=open]:bg-white/10"
                   )}
                 >
@@ -164,7 +164,7 @@ export function Navigation() {
                     className={cn(
                       "uppercase transition-all font-medium text-sm px-3 py-2 rounded-md",
                       isScrolled
-                        ? "text-black hover:text-primary hover:bg-black/5 focus:text-primary focus:bg-black/5"
+                        ? "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
                         : "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
                     )}
                   >
@@ -174,26 +174,11 @@ export function Navigation() {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <div className="hidden md:block">
-            <Link
-              href="/files/Company-Profile-PT-Gatra-Hita-Wasana-2025.pdf"
-              target="_blank"
-              className={cn(
-                "flex items-center gap-2 rounded-sm border border-white/10 px-5 text-sm font-light text-white tracking-tight transition-all focus:outline-none duration-300 backdrop-blur-sm",
-                isScrolled
-                  ? "bg-primary hover:bg-primary/90 focus:bg-primary/90 py-2"
-                  : "bg-white/10 hover:bg-white/20 focus:bg-white/20 py-3"
-              )}
-            >
-              <FileText className="w-4 h-4" />
-              Download
-            </Link>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden p-2 ${isScrolled ? "text-black" : "text-white"}`}
+            className="md:hidden p-2 text-white"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -202,7 +187,7 @@ export function Navigation() {
         {/* Mobile Navigation */}
         {isOpen && (
           <>
-            <div className="md:hidden pb-4 space-y-3 font-mono bg-black text-white shadow-lg rounded-b-lg p-4 mb-4">
+            <div className="md:hidden pb-4 space-y-3 bg-black text-white shadow-lg rounded-b-lg p-4 mb-4">
               <Link
                 href="/"
                 className="block uppercase transition-colors hover:text-primary"
