@@ -1,7 +1,6 @@
 import type React from "react"
 import { Navigation } from "@/components/Navigation"
 import { Footer } from "@/components/Footer"
-import { CTASection } from "@/components/cta-section"
 import "@/styles/globals.css"
 
 export default function PublicLayout({
@@ -13,7 +12,6 @@ export default function PublicLayout({
         <>
             <Navigation />
             {children}
-            <CTASection />
             <Footer />
         </>
     )

@@ -65,8 +65,8 @@ export function Navigation() {
                     className={cn(
                       "uppercase transition-all text-sm px-3 py-2 rounded-md",
                       isScrolled
-                        ? "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
-                        : "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
+                        ? "text-white hover:text-white/80 focus:text-white/80 focus:bg-white/10"
+                        : "text-white hover:text-white/80 focus:text-white/80 focus:bg-white/10"
                     )}
                   >
                     About
@@ -81,8 +81,8 @@ export function Navigation() {
                     className={cn(
                       "uppercase transition-all text-sm px-3 py-2 rounded-md",
                       isScrolled
-                        ? "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
-                        : "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
+                        ? "text-white hover:text-white/80 focus:text-white/80 focus:bg-white/10"
+                        : "text-white hover:text-white/80 focus:text-white/80 focus:bg-white/10"
                     )}
                   >
                     Team
@@ -97,8 +97,8 @@ export function Navigation() {
                     className={cn(
                       "uppercase transition-all text-sm px-3 py-2 rounded-md",
                       isScrolled
-                        ? "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
-                        : "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
+                        ? "text-white hover:text-white/80 focus:text-white/80 focus:bg-white/10"
+                        : "text-white hover:text-white/80 focus:text-white/80 focus:bg-white/10"
                     )}
                   >
                     Our Services
@@ -113,8 +113,8 @@ export function Navigation() {
                     className={cn(
                       "uppercase transition-all text-sm px-3 py-2 rounded-md",
                       isScrolled
-                        ? "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
-                        : "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
+                        ? "text-white hover:text-white/80 focus:text-white/80 focus:bg-white/10"
+                        : "text-white hover:text-white/80 focus:text-white/80 focus:bg-white/10"
                     )}
                   >
                     Blog
@@ -129,8 +129,8 @@ export function Navigation() {
                     className={cn(
                       "uppercase transition-all text-sm px-3 py-2 rounded-md",
                       isScrolled
-                        ? "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
-                        : "text-white hover:text-white/80 hover:bg-white/10 focus:text-white/80 focus:bg-white/10"
+                        ? "text-white hover:text-white/80 focus:text-white/80 focus:bg-white/10"
+                        : "text-white hover:text-white/80 focus:text-white/80 focus:bg-white/10"
                     )}
                   >
                     Contact
