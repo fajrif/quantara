@@ -1,5 +1,8 @@
-import { NeuralNetworkBackground } from "@/components/ui/neural-network-background"
-import { AnimatedHeroContent } from "@/components/ui/animated-hero-content"
+import { ImageHeroContent } from "@/components/ui/image-hero-content"
+import { MagicText } from "@/components/ui/magic-text"
+import { FeatureShaderCard } from "@/components/ui/feature-shader-card"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 import { ClientsCloud } from "@/components/clients-cloud"
 import { ClientPrimary } from "@/components/client-primary"
 import { AnimatedDiv } from "@/components/ui/animated-div"
@@ -36,38 +39,98 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section with Neural Network Background */}
-      <NeuralNetworkBackground
-        colorScheme={{
-          primary: '#011b41',    // Deep blue (brand)
-          secondary: '#2775fd',  // Sky-blue
-          accent: '#fdaed1'      // pink-500
-        }}
-        intensity={0.6}
-      >
-        <div className="relative h-screen w-screen overflow-hidden">
-          <AnimatedHeroContent
-            title="Mitra Terpercaya dalam Solusi Digital dan Inovasi"
-            description="PT Quantara Strategic menyediakan solusi teknologi informasi terkini untuk kebutuhan bisnis Anda. Dari infrastruktur IT hingga transformasi digital."
-            badgeText="PT. Quantara Strategic"
-            ctaButtons={[
-              { text: "Hubungi Kami", href: "/contact", primary: true },
-              { text: "Lihat Layanan", href: "/business" }
-            ]}
-            images={[
-              { src: "/images/jakarta-city.jpg", alt: "Jakarta City" },
-              { src: "/images/team-collaboration.jpg", alt: "Team Collaboration", grayscale: true },
-              { src: "/images/smart-microchip.jpg", alt: "Smart Microchip" }
-            ]}
-            microDetails={[
-              "Solusi Profesional",
-              "Tim Berpengalaman",
-              "Dukungan 24/7"
-            ]}
+      <section id="banner-section" className="bg-primary">
+        {/* Hero Section with Image Background */}
+        <ImageHeroContent
+          image="/images/banner1.png"
+          text="Connecting Capital With Strategy"
+        />
+
+        {/* Intro paragraph */}
+        <div className="container mx-auto py-16">
+          <MagicText
+            text="Founded in 2025, Quantara Strategic operates as both deal-maker and strategic partner enabling clients to unlock value through informed decision-making, curated counterparties, and clear strategic alignment. We bring commercial fluency, regulatory awareness, and a hands-on advisory approach to help clients navigate negotiations, evaluate opportunities, and execute transactions with confidence."
+            className="text-2xl font-light leading-snug text-white sm:text-3xl"
           />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent" />
+          <Link href="/about">
+            <div className="mt-6 flex items-center gap-3 text-white/70 transition-all duration-300 hover:gap-4 hover:text-[hsl(var(--ptr-primary))]">
+              <span className="text-xs font-light uppercase tracking-widest">Learn More</span>
+              <ArrowRight size={14} />
+            </div>
+          </Link>
         </div>
-      </NeuralNetworkBackground>
+      </section>
+
+      {/* What We Do Section */}
+      <section id="what-we-do" className="bg-primary py-16">
+        <div className="container mx-auto">
+          {/* Section header */}
+          <h2 className="text-3xl font-light uppercase tracking-wide text-white md:text-4xl">
+            What We Do
+          </h2>
+          <p className="mt-3 max-w-xl font-light leading-relaxed text-white">
+            Our advisory platform connects opportunities with the right stakeholders while supporting every stage of the deal lifecycle.
+          </p>
+
+          {/* Bento grid */}
+          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-6">
+            {/* Row 1 — 2 cols */}
+            <FeatureShaderCard
+              number={1}
+              title="Deal Origination (Buy-Side & Sell-Side)"
+              description="We identify and connect qualified investors, acquirers, operators, and strategic partners using curated networks and proprietary sourcing channels."
+              style="style1"
+              className="h-64 lg:col-span-3"
+            />
+            <FeatureShaderCard
+              number={2}
+              title="Transaction Advisory & Deal Structuring"
+              description="From early discussions to term sheet alignment, we support commercial structuring, negotiation strategy, and the refinement of deal expectations."
+              style="style2"
+              className="h-64 lg:col-span-3"
+            />
+
+            {/* Row 2 — 3 cols */}
+            <FeatureShaderCard
+              number={3}
+              title="Financing Solutions & Strategies"
+              description="We arrange connections between lenders and borrowers, including private lending, startup fundraising, and group funding structures supported by a tailored, hands-on approach."
+              style="style3"
+              className="h-64 lg:col-span-2"
+            />
+            <FeatureShaderCard
+              number={4}
+              title="Business & Transaction Strategy"
+              description="We analyze business models, strategic positioning, synergy potential, and post-deal impact to guide well-grounded decision-making."
+              style="style4"
+              className="h-64 lg:col-span-2"
+            />
+            <FeatureShaderCard
+              number={5}
+              title="Investor & Partner Introductions"
+              description="We give clients access to financial sponsors, corporations, strategic operators, and institutional investors relevant to their objectives."
+              style="style5"
+              className="h-64 lg:col-span-2"
+            />
+
+            {/* Row 3 — 2 cols */}
+            <FeatureShaderCard
+              number={6}
+              title="Due Diligence Support Coordination"
+              description="We coordinate financial, legal, and commercial due diligence by engaging subject-matter advisors and organizing key data requests."
+              style="style6"
+              className="h-64 lg:col-span-3"
+            />
+            <FeatureShaderCard
+              number={7}
+              title="Cross-Border Deal Navigation"
+              description="We identify international counterparties and support clients in managing cultural, regulatory, and commercial considerations across markets."
+              style="style7"
+              className="h-64 lg:col-span-3"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Clients Logo Cloud Section */}
       <section id="clients-section" className="bg-black text-white py-10 px-4">
