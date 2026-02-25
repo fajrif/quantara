@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react"
 import { AnimatedDiv } from "@/components/ui/animated-div"
 import { WhyQuantara } from "@/components/why-quantara"
 import { WhatWeDo } from "@/components/what-we-do"
-import Image from "next/image"
+import { OurCommitment } from "@/components/our-commitment"
 
 export default function Home() {
 
@@ -43,26 +43,12 @@ export default function Home() {
         </AnimatedDiv>
       </section>
 
+
       {/* Our Commitment Section */}
-      <section id="our-commitment" className="bg-white">
-        <div className="container mx-auto px-4 pt-20 pb-0">
-          <p className="mb-6 text-sm text-primary/60">Our Commitment</p>
-          <MagicText
-            text="We aim to create a trusted platform where businesses, investors, and operators can engage opportunities with confidence, supported by strategic insight, disciplined execution, and curated introductions."
-            className="text-2xl font-light leading-snug text-primary sm:text-3xl"
-          />
-        </div>
-        <div className="mt-16 w-full">
-          <Image
-            src="/images/buildings.png"
-            alt="Buildings"
-            width={1920}
-            height={800}
-            className="w-full object-cover"
-            priority={false}
-          />
-        </div>
-      </section>
+      <OurCommitment
+        title="Our Commitment"
+        desc="We aim to create a trusted platform where businesses, investors, and operators can engage opportunities with confidence, supported by strategic insight, disciplined execution, and curated introductions."
+      />
 
     </div>
   )
