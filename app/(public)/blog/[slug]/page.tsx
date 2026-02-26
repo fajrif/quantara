@@ -56,11 +56,11 @@ export default async function MediaPostPage({ params }: { params: Promise<{ slug
                 <div className="relative mx-auto max-w-4xl px-4 pt-32 pb-16 sm:px-6 lg:px-8">
                     {/* Breadcrumbs */}
                     <div className="flex items-center gap-1 text-sm font-light text-white/60 mb-6">
-                        <Link href="/" className="hover:text-white/80 transition-colors">
+                        <Link href="/" className="hover:text-[hsl(var(--ptr-primary))] transition-colors">
                             Home
                         </Link>
                         <ChevronRight className="w-3 h-3" />
-                        <Link href="/media" className="hover:text-white/80 transition-colors">
+                        <Link href="/media" className="hover:text-[hsl(var(--ptr-primary))] transition-colors">
                             Media
                         </Link>
                         <ChevronRight className="w-3 h-3" />

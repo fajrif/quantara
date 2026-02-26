@@ -7,7 +7,7 @@ import { OurRole } from "@/components/our-role"
 import { WhatWeSupport } from "@/components/what-we-support"
 import { OurPerspective } from "@/components/our-perspective"
 
-export default function About() {
+export default function AboutPage() {
 
   return (
     <div className="min-h-screen">
@@ -17,14 +17,14 @@ export default function About() {
           image="/images/banner2.png"
           text="About Quantara Strategic"
         />
+        {/* Who We Are Section */}
+        <AnimatedDiv id="who-we-are-section-div" delay={0.1}>
+          <WhoWeAre />
+        </AnimatedDiv>
       </section>
-
-      {/* Who We Are Section */}
-      <WhoWeAre />
 
       {/* Our Role Section */}
       <OurRole />
-
 
       {/* Why Quantara Section */}
       <section id="why-quantara" className="bg-white py-20">
@@ -40,7 +40,11 @@ export default function About() {
       <WhatWeSupport />
 
       {/* Our Perspective Section */}
-      <OurPerspective />
+      <section id="our-perspective" className="bg-white">
+        <AnimatedDiv id="our-perspective-section-div" delay={0.1}>
+          <OurPerspective />
+        </AnimatedDiv>
+      </section>
 
       {/* Our Commitment Section */}
       <OurCommitment

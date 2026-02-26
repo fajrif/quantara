@@ -53,27 +53,27 @@ export function Footer() {
               <h3 className="mb-4 font-semibold text-white">Quantara</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/about" className="text-sm text-white/70 hover:text-white transition-colors">
+                  <Link href="/about" className="text-sm text-white/70 hover:text-[hsl(var(--ptr-primary))] transition-colors">
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="/team" className="text-sm text-white/70 hover:text-white transition-colors">
+                  <Link href="/team" className="text-sm text-white/70 hover:text-[hsl(var(--ptr-primary))] transition-colors">
                     Team
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="text-sm text-white/70 hover:text-white transition-colors">
+                  <Link href="/services" className="text-sm text-white/70 hover:text-[hsl(var(--ptr-primary))] transition-colors">
                     Our Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="text-sm text-white/70 hover:text-white transition-colors">
+                  <Link href="/blog" className="text-sm text-white/70 hover:text-[hsl(var(--ptr-primary))] transition-colors">
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-sm text-white/70 hover:text-white transition-colors">
+                  <Link href="/contact" className="text-sm text-white/70 hover:text-[hsl(var(--ptr-primary))] transition-colors">
                     Contact
                   </Link>
                 </li>
@@ -82,19 +82,19 @@ export function Footer() {
             {/* Follow Us */}
             <div>
               <h3 className="mb-4 font-semibold text-white">Follow Us</h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 <li>
-                  <Link href="#" className="text-sm text-white/70 hover:text-white transition-colors">
+                  <Link href="#" className="text-sm text-white/70 hover:text-[hsl(var(--ptr-primary))] transition-colors">
                     Instagram
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-sm text-white/70 hover:text-white transition-colors">
+                  <Link href="#" className="text-sm text-white/70 hover:text-[hsl(var(--ptr-primary))] transition-colors">
                     Linkedin
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-sm text-white/70 hover:text-white transition-colors">
+                  <Link href="#" className="text-sm text-white/70 hover:text-[hsl(var(--ptr-primary))] transition-colors">
                     Youtube
                   </Link>
                 </li>
@@ -103,14 +103,14 @@ export function Footer() {
             {/* Contact Us */}
             <div>
               <h3 className="mb-4 font-semibold text-white">Contact Us</h3>
-              <ul className="space-y-3 flex flex-col items-center md:items-start">
+              <ul className="space-y-2 flex flex-col items-center md:items-start">
                 <li>
-                  <a href="mailto:connect@quantara.id" className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors">
+                  <a href="mailto:connect@quantara.id" className="mb-2 flex items-center gap-2 text-sm text-white/70 hover:text-[hsl(var(--ptr-primary))] transition-colors">
                     <Mail size={16} />
                     <span>connect@quantara.id</span>
                   </a>
                 </li>
-                <li className="flex items-center gap-2 text-sm text-gray-300">
+                <li className="flex items-center gap-2 text-sm text-white/70 hover:text-[hsl(var(--ptr-primary))]">
                   <Phone size={16} />
                   <a href="tel:+6281111111">
                     +62 811 1111 1111

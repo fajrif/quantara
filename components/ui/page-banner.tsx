@@ -164,7 +164,7 @@ export function PageBanner({
                     {/* Gradient Overlay for Custom Background */}
                     <div
                         aria-hidden
-                        className="absolute z-[1] inset-0 bg-gradient-to-r from-black from-35%"
+                        className="absolute z-[1] inset-0 bg-gradient-to-r from-primary from-35%"
                     />
                 </>
             ) : image ? (
@@ -182,43 +182,40 @@ export function PageBanner({
                     {/* Gradient Overlay for Image */}
                     <div
                         aria-hidden
-                        className="absolute z-[1] inset-0 bg-gradient-to-r from-black from-35%"
+                        className="absolute z-[1] inset-0 bg-gradient-to-r from-primary from-35%"
                     />
                 </>
             ) : (
                 <>
-                    {/* Gradient Background */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-primary via-primary/90 to-black" />
+                    {/* Solid Primary Base */}
+                    <div className="absolute inset-0 bg-primary" />
 
-                    {/* Noise Texture Overlay */}
+                    {/* Center Radial Glow — Navy → lighter → Navy */}
                     <div
-                        className="absolute inset-0 opacity-30 mix-blend-overlay"
+                        className="absolute inset-0"
                         style={{
-                            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+                            background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 90%)',
                         }}
                     />
-
-                    {/* Subtle Glow */}
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/5 blur-[100px] rounded-full" />
                 </>
             )}
 
             {/* Content */}
-            <div className={`relative z-10 mx-auto max-w-6xl px-4 pt-32 ${backgroundComponent ? 'pb-[100px] md:pb-[200px]' : ''} sm:px-4 md:px-0`}>
+            <div className={`relative z-10 container mx-auto pt-32 ${backgroundComponent ? 'pb-[100px] md:pb-[200px]' : ''}`}>
                 {/* Breadcrumbs */}
                 {breadcrumbs.length > 0 && (
                     <div
                         ref={breadcrumbRef}
                         className="flex items-center gap-1 text-sm font-light text-white/60 mb-6"
                     >
-                        <Link href="/" className="hover:text-white/80 transition-colors">
+                        <Link href="/" className="hover:text-[hsl(var(--ptr-primary))] transition-colors">
                             Home
                         </Link>
                         {breadcrumbs.map((crumb, index) => (
                             <span key={index} className="flex items-center gap-1">
                                 <ChevronRight className="w-3 h-3" />
                                 {crumb.href ? (
-                                    <Link href={crumb.href} className="hover:text-white/80 transition-colors">
+                                    <Link href={crumb.href} className="hover:text-[hsl(var(--ptr-primary))] transition-colors">
                                         {crumb.label}
                                     </Link>
                                 ) : (
@@ -246,18 +243,17 @@ export function PageBanner({
                 )}
 
                 {/* Title */}
-                <h1
+                <h2
                     ref={headerRef}
-                    className="max-w-3xl text-3xl font-extralight uppercase leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl"
-                >
+                    className="text-3xl font-light uppercase tracking-wide text-white md:text-4xl">
                     {title}
-                </h1>
+                </h2>
 
                 {/* Description */}
                 {description && (
                     <p
                         ref={descRef}
-                        className="mt-6 max-w-2xl text-base font-light leading-relaxed text-white/70 sm:text-lg"
+                        className="mt-6 max-w-2xl text-base font-light leading-relaxed text-white/80 sm:text-lg"
                     >
                         {description}
                     </p>

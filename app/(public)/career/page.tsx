@@ -41,7 +41,7 @@ export default async function CareerPage() {
                   <article className="group rounded-2xl border border-white/20 bg-[rgba(231,236,235,0.08)] p-6 backdrop-blur hover:bg-[rgba(231,236,235,0.12)] transition-all duration-300 mb-4">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                       <div className="space-y-3 flex-1">
-                        <h3 className="text-xl font-light text-white group-hover:text-white/80 transition-colors">
+                        <h3 className="text-xl font-light text-white group-hover:text-[hsl(var(--ptr-primary))] transition-colors">
                           {career.title}
                         </h3>
                         <p className="text-white/50 font-light text-sm leading-relaxed line-clamp-2">

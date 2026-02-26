@@ -87,7 +87,7 @@ export default function ContactPage() {
                       <div className="text-white font-medium text-sm mb-1">Email</div>
                       <a
                         href="mailto:connect@quantara.id"
-                        className="text-white/80 font-light hover:text-white/80 transition-colors"
+                        className="text-white/80 font-light hover:text-[hsl(var(--ptr-primary))] transition-colors"
                       >
                         connect@quantara.id
                       </a>
@@ -100,7 +100,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-white font-medium text-sm mb-1">Telepon</div>
-                      <a href="tel:+6281110127970" className="text-white/80 font-light hover:text-white/80 transition-colors">
+                      <a href="tel:+6281110127970" className="text-white/80 font-light hover:text-[hsl(var(--ptr-primary))] transition-colors">
                         +62 811 1012 7970
                       </a>
                     </div>

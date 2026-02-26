@@ -59,11 +59,11 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ s
                 <div className="relative mx-auto max-w-4xl px-4 pt-32 pb-16 sm:px-6 lg:px-8">
                     {/* Breadcrumbs */}
                     <div className="flex items-center gap-1 text-sm font-light text-white/60 mb-6">
-                        <Link href="/" className="hover:text-white/80 transition-colors">
+                        <Link href="/" className="hover:text-[hsl(var(--ptr-primary))] transition-colors">
                             Home
                         </Link>
                         <ChevronRight className="w-3 h-3" />
-                        <Link href="/career" className="hover:text-white/80 transition-colors">
+                        <Link href="/career" className="hover:text-[hsl(var(--ptr-primary))] transition-colors">
                             Karir
                         </Link>
                         <ChevronRight className="w-3 h-3" />

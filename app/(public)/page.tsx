@@ -7,7 +7,7 @@ import { WhyQuantara } from "@/components/why-quantara"
 import { WhatWeDo } from "@/components/what-we-do"
 import { OurCommitment } from "@/components/our-commitment"
 
-export default function Home() {
+export default function HomePage() {
 
   return (
     <div className="min-h-screen">
@@ -25,8 +25,8 @@ export default function Home() {
             className="text-2xl font-light leading-snug text-white sm:text-3xl"
           />
           <Link href="/about">
-            <div className="mt-6 flex items-center gap-3 text-white/70 transition-all duration-300 hover:gap-4 hover:text-[hsl(var(--ptr-primary))]">
-              <span className="text-xs font-light uppercase tracking-widest">Learn More</span>
+            <div className="mt-6 flex items-center gap-3 text-white transition-all duration-300 hover:gap-4 hover:text-[hsl(var(--ptr-primary))]">
+              <span className="text-base font-light uppercase tracking-widest">Learn More</span>
               <ArrowRight size={14} />
             </div>
           </Link>

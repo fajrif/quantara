@@ -65,8 +65,8 @@ export function Navigation() {
                     className={cn(
                       "uppercase transition-all text-sm px-3 py-2 rounded-md",
                       isScrolled
-                        ? "text-white hover:text-white/80 focus:text-white/80"
-                        : "text-white hover:text-white/80 focus:text-white/80"
+                        ? "text-white hover:text-[hsl(var(--ptr-primary))] focus:text-white/80"
+                        : "text-white hover:text-[hsl(var(--ptr-primary))] focus:text-white/80"
                     )}
                   >
                     About
@@ -81,8 +81,8 @@ export function Navigation() {
                     className={cn(
                       "uppercase transition-all text-sm px-3 py-2 rounded-md",
                       isScrolled
-                        ? "text-white hover:text-white/80 focus:text-white/80"
-                        : "text-white hover:text-white/80 focus:text-white/80"
+                        ? "text-white hover:text-[hsl(var(--ptr-primary))] focus:text-white/80"
+                        : "text-white hover:text-[hsl(var(--ptr-primary))] focus:text-white/80"
                     )}
                   >
                     Team
@@ -97,8 +97,8 @@ export function Navigation() {
                     className={cn(
                       "uppercase transition-all text-sm px-3 py-2 rounded-md",
                       isScrolled
-                        ? "text-white hover:text-white/80 focus:text-white/80"
-                        : "text-white hover:text-white/80 focus:text-white/80"
+                        ? "text-white hover:text-[hsl(var(--ptr-primary))] focus:text-white/80"
+                        : "text-white hover:text-[hsl(var(--ptr-primary))] focus:text-white/80"
                     )}
                   >
                     Our Services
@@ -113,8 +113,8 @@ export function Navigation() {
                     className={cn(
                       "uppercase transition-all text-sm px-3 py-2 rounded-md",
                       isScrolled
-                        ? "text-white hover:text-white/80 focus:text-white/80"
-                        : "text-white hover:text-white/80 focus:text-white/80"
+                        ? "text-white hover:text-[hsl(var(--ptr-primary))] focus:text-white/80"
+                        : "text-white hover:text-[hsl(var(--ptr-primary))] focus:text-white/80"
                     )}
                   >
                     Blog
@@ -129,8 +129,8 @@ export function Navigation() {
                     className={cn(
                       "uppercase transition-all text-sm px-3 py-2 rounded-md",
                       isScrolled
-                        ? "text-white hover:text-white/80 focus:text-white/80"
-                        : "text-white hover:text-white/80 focus:text-white/80"
+                        ? "text-white hover:text-[hsl(var(--ptr-primary))] focus:text-white/80"
+                        : "text-white hover:text-[hsl(var(--ptr-primary))] focus:text-white/80"
                     )}
                   >
                     Contact
