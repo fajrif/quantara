@@ -322,7 +322,7 @@ export function ArticleForm({ initialData, categories }: ArticleFormProps) {
                     {/* Editor Content */}
                     <EditorContent
                         editor={editor}
-                        className="prose max-w-none p-4 min-h-[300px] focus:outline-none"
+                        className="prose max-w-none [&_.ProseMirror]:p-4 [&_.ProseMirror]:min-h-[300px] [&_.ProseMirror]:focus:outline-none [&_.ProseMirror]:cursor-text"
                     />
                 </div>
             </div>

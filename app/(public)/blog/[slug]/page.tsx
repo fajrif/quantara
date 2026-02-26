@@ -35,7 +35,7 @@ export default async function MediaPostPage({ params }: { params: Promise<{ slug
     }
 
     return (
-        <div className="min-h-screen bg-black">
+        <div className="min-h-screen bg-primary">
             {/* Banner Section */}
             <div className="relative overflow-hidden">
                 {/* Gradient Background */}
@@ -53,23 +53,10 @@ export default async function MediaPostPage({ params }: { params: Promise<{ slug
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/5 blur-[100px] rounded-full" />
 
                 {/* Content */}
-                <div className="relative mx-auto max-w-4xl px-4 pt-32 pb-16 sm:px-6 lg:px-8">
-                    {/* Breadcrumbs */}
-                    <div className="flex items-center gap-1 text-sm font-light text-white/60 mb-6">
-                        <Link href="/" className="hover:text-[hsl(var(--ptr-primary))] transition-colors">
-                            Home
-                        </Link>
-                        <ChevronRight className="w-3 h-3" />
-                        <Link href="/media" className="hover:text-[hsl(var(--ptr-primary))] transition-colors">
-                            Media
-                        </Link>
-                        <ChevronRight className="w-3 h-3" />
-                        <span className="text-white/80 truncate max-w-[200px]">{article.title}</span>
-                    </div>
-
+                <div className="relative mx-auto max-w-4xl pt-32 pb-16">
                     {/* Category Badge */}
                     <div className="mb-6">
-                        <span className="inline-block px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-white/70">
+                        <span className="inline-block px-3 py-1 border border-white/10 bg-white/5 text-xs text-white/70">
                             {article.category.name}
                         </span>
                     </div>
@@ -107,7 +94,7 @@ export default async function MediaPostPage({ params }: { params: Promise<{ slug
                             />
                         </div>
                     ) : article.image ? (
-                        <div className="mb-12 rounded-2xl overflow-hidden border border-white/10">
+                        <div className="mb-12 overflow-hidden border border-white/10">
                             <img
                                 src={article.image}
                                 alt={article.title}
@@ -136,11 +123,11 @@ export default async function MediaPostPage({ params }: { params: Promise<{ slug
                     {/* Back to Media */}
                     <div className="mt-16 pt-8 border-t border-white/10">
                         <Link
-                            href="/media"
-                            className="inline-flex items-center gap-2 text-white/60 font-light hover:text-white transition-colors"
+                            href="/blog"
+                            className="inline-flex items-center gap-2 text-base text-white font-light hover:text-[hsl(var(--ptr-primary))] transition-colors uppercase"
                         >
                             <ArrowLeft size={18} />
-                            Kembali ke Media
+                            Back
                         </Link>
                     </div>
                 </div>

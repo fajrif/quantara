@@ -1,6 +1,7 @@
 import { PageBanner } from "@/components/ui/page-banner"
 import { AnimatedDiv } from "@/components/ui/animated-div"
 import { Calendar, Clock, ArrowRight } from "lucide-react"
+import { OurCommitment } from "@/components/our-commitment"
 import Link from "next/link"
 import { prisma } from "@/lib/prisma"
 import { format } from "date-fns"
@@ -20,23 +21,21 @@ export default async function MediaPage() {
   })
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       {/* Banner Section */}
       <PageBanner
-        title="Media & Insights"
-        description="Tetap terinformasi dengan tren terbaru, best practices, dan insights dari dunia IT dan teknologi digital."
-        breadcrumbs={[{ label: "Media" }]}
-        badge={{ label: "MEDIA", text: "Terbaru" }}
+        title="Articles & Publications"
+        description="Our articles and publications reflect our commitment to thought leadership in the financial industry. Through in-depth analysis, market insights, and expert commentary, we provide valuable perspectives to help clients and partners stay informed in a rapidly evolving financial landscape."
       />
 
       {/* Articles Grid */}
-      <section className="bg-black pb-20 px-4">
-        <AnimatedDiv id="articles-grid" className="container mx-auto max-w-6xl">
+      <section className="bg-primary pb-20 px-4">
+        <AnimatedDiv id="articles-grid" className="container mx-auto">
           {articles.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {articles.map((article: typeof articles[0]) => (
-                <Link key={article.id} href={`/media/${article.slug}`}>
-                  <article className="group h-full rounded-xl border border-white/20 bg-[rgba(231,236,235,0.08)] overflow-hidden backdrop-blur hover:bg-[rgba(231,236,235,0.10)] transition-all duration-300">
+                <Link key={article.id} href={`/blog/${article.slug}`}>
+                  <article className="group h-full border border-white/20 bg-[rgba(231,236,235,0.08)] overflow-hidden backdrop-blur hover:bg-[rgba(231,236,235,0.10)] transition-all duration-300">
                     {/* Article Image */}
                     {article.image && (
                       <div className="relative aspect-video overflow-hidden">
@@ -51,7 +50,7 @@ export default async function MediaPage() {
                     <div className="flex flex-col h-full p-6">
                       {/* Category Badge */}
                       <div className="mb-4">
-                        <span className="inline-block px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-white/60">
+                        <span className="inline-block px-3 py-1 border border-white/10 bg-white/5 text-xs text-white/60">
                           {article.category.name}
                         </span>
                       </div>
@@ -62,7 +61,7 @@ export default async function MediaPage() {
                       </h3>
 
                       {/* Description */}
-                      <p className="text-white/50 font-light text-sm leading-relaxed mb-6">
+                      <p className="text-white/70 font-light text-sm leading-relaxed mb-6">
                         {article.short_description}
                       </p>
 
@@ -91,11 +90,17 @@ export default async function MediaPage() {
             </div>
           ) : (
             <div className="text-center py-20">
-              <p className="text-white/50 font-light text-lg">Belum ada artikel yang dipublikasikan.</p>
+              <p className="text-white/50 font-light text-lg">No articles available at this time</p>
             </div>
           )}
         </AnimatedDiv>
       </section>
+
+      {/* Our Commitment Section */}
+      <OurCommitment
+        title="Our Commitment"
+        desc="We aim to create a trusted platform where businesses, investors, and operators can engage opportunities with confidence, supported by strategic insight, disciplined execution, and curated introductions."
+      />
 
     </div>
   )

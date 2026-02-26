@@ -32,24 +32,36 @@ function SupportItem({ text, index }: { text: string; index: number }) {
     )
 }
 
-export function WhatWeSupport() {
+export function WhatWeSupport({
+    title = "What We Support",
+    description = "Our advisory services cover the full transaction lifecycle, including:",
+}: {
+    title?: string
+    description?: string
+} = {}) {
     return (
         <section id="what-we-support" className="bg-white pb-10">
             <div className="container mx-auto">
-                {/* Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                >
-                    <h2 className="text-3xl font-light uppercase tracking-wide text-primary md:text-4xl">
-                      What We Support
-                    </h2>
-                    <p className="mt-3 max-w-xl font-light leading-relaxed">
-                      Our advisory services cover the full transaction lifecycle, including:
-                    </p>
-                </motion.div>
+                {/* Header — only shown when title or description are non-empty */}
+                {(title || description) && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                    >
+                        {title && (
+                            <h2 className="text-3xl font-light uppercase tracking-wide text-primary md:text-4xl">
+                                {title}
+                            </h2>
+                        )}
+                        {description && (
+                            <p className="mt-3 max-w-xl font-light leading-relaxed">
+                                {description}
+                            </p>
+                        )}
+                    </motion.div>
+                )}
 
                 {/* Two-column list */}
                 <div className="mt-10 grid grid-cols-1 gap-x-24 md:grid-cols-2">
