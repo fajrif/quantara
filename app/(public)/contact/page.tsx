@@ -225,8 +225,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="w-full hover:opacity-90 text-white font-medium py-2.5 px-4 rounded-lg transition-opacity text-sm cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
-                    style={{ background: "hsl(var(--ptr-primary))" }}
+                    className="w-full hover:opacity-90 bg-yellow-600 text-white font-medium py-2.5 px-4 rounded-lg transition-opacity text-sm cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {status === "loading" ? "Submitting…" : "Submit"}
                   </button>
