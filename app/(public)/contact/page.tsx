@@ -163,7 +163,7 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2.5 px-4 rounded-lg transition-colors text-sm cursor-pointer"
+                  className="w-full bg-yellow-600 hover:bg-yellow-600 text-white font-medium py-2.5 px-4 rounded-lg transition-colors text-sm cursor-pointer"
                 >
                   Submit
                 </button>
