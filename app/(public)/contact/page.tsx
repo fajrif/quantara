@@ -57,7 +57,7 @@ export default function ContactPage() {
       </section>
 
       {/* Get In Touch Section */}
-      <section className="bg-primary py-16">
+      <section className="bg-primary py-10 md:py-16">
         <div className="container mx-auto">
           <h2 className="text-2xl font-light uppercase tracking-wide text-white md:text-4xl lg:text-4xl">
             Get In Touch
@@ -67,7 +67,7 @@ export default function ContactPage() {
             {/* Left — company + address */}
             <div className="space-y-3">
               <p className="text-base font-semibold text-white">Quantara Strategic</p>
-              <p className="text-sm font-light leading-relaxed text-white/80">
+              <p className="text-sm font-light leading-relaxed text-white/80 pr-15 md:pr-0">
                 PT Quantara Sinergi Strategis, Grand Wijaya Center B 8-9<br />
                 Wijaya II, Kebayoran Baru, Jakarta – Indonesia 12160
               </p>
@@ -101,7 +101,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="relative py-20 px-4 overflow-hidden bg-white">
+      <section className="relative pt-4 pb-20 md:py-20 md:px-4 overflow-hidden bg-white">
         <AnimatedDiv id="contact-section" className="container mx-auto max-w-6xl relative z-20">
           <div className="w-full relative overflow-hidden flex flex-col md:flex-row shadow-xl">
 

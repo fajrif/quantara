@@ -152,7 +152,7 @@ export function Navigation() {
         {/* Mobile Navigation */}
         {isOpen && (
           <>
-            <div className="md:hidden pb-4 space-y-3 bg-black text-white shadow-lg rounded-b-lg p-4 mb-4">
+            <div className="md:hidden pb-4 space-y-3 bg-black text-sm text-white shadow-lg rounded-b-lg p-4 mb-4">
               <Link
                 href="/about"
                 className="block uppercase transition-colors hover:text-primary"

@@ -4,7 +4,7 @@ import Image from "next/image"
 export function OurCommitment({ title = "", desc = "" }: { title?: string, desc?: string }) {
   return (
     <section id="our-commitment" className="bg-white">
-      <div className="container mx-auto px-4 pt-20 pb-0">
+      <div className="container mx-auto px-4 pt-0 md:pt-20 pb-0">
         <p className="mb-6 text-sm text-primary/60">{title}</p>
         <MagicText
           text={desc}

@@ -8,7 +8,7 @@ export function WhatWeDo({
   description?: string
 } = {}) {
   return (
-    <section id="what-we-do" className="bg-primary py-16">
+    <section id="what-we-do" className="bg-primary py-6 md:py-16">
       <div className="container mx-auto">
         {/* Section header — only shown when title or description are non-empty */}
         {(title || description) && (
@@ -27,7 +27,7 @@ export function WhatWeDo({
         )}
 
         {/* Bento grid */}
-        <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-6">
           {/* Row 1 — 2 cols */}
           <FeatureShaderCard
             number={1}

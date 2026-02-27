@@ -1,7 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Mail, Phone } from "lucide-react"
-import { LinkedInLogo } from "@/components/ui/custom-icons"
 
 export function Footer() {
   return (
@@ -20,7 +19,7 @@ export function Footer() {
       {/* Content */}
       <div className="relative container mx-auto px-4">
         {/* Logo row */}
-        <div className="py-10 md:py-12">
+        <div className="flex justify-center md:justify-start py-10 md:py-12">
           <Image
             src="/images/logo-white.png"
             alt="PT Quantara Strategic"
@@ -31,7 +30,7 @@ export function Footer() {
         </div>
 
         {/* Main grid */}
-        <div className="flex flex-col gap-10 pb-12 md:flex-row md:justify-between md:items-start md:gap-18 text-center md:text-left">
+        <div className="flex flex-col gap-10 pb-6 md:pb-12 md:flex-row md:justify-between md:items-start md:gap-18 text-center md:text-left">
           {/* Description column */}
           <div className="max-w-[550px]">
             <p className="mb-4 text-xl font-semibold text-white">Connecting Capital with Strategy</p>
@@ -40,16 +39,18 @@ export function Footer() {
               structured transactions, strategic partnerships, and disciplined execution.
             </p>
             <p className="text-sm leading-relaxed text-white/70">
-              <strong className="text-white">PT Quantara Sinergi Strategis</strong><br/>
-              Grand Wijaya Center B 8-9 Wijaya II,<br/>
-              Kebayoran Baru, Jakarta Selatan<br/>
-              Indonesia 12160
+              <strong className="text-white">PT Quantara Sinergi Strategis</strong><br />
+              Grand Wijaya Center B 8-9{"\u2028"}Wijaya II,<br />
+              Kebayoran Baru,{"\u2028"}Jakarta Selatan<br />
+              Indonesia 1216 0
             </p>
           </div>
 
-          <div className="flex gap-10">
-            {/* Quantara links */}
-            <div>
+          {/* Right columns */}
+          <div className="flex flex-col gap-8 md:flex-row md:gap-10">
+
+            {/* Quantara links — hidden on mobile */}
+            <div className="hidden md:block">
               <h3 className="mb-4 font-semibold text-white">Quantara</h3>
               <ul className="space-y-2">
                 <li>
@@ -79,10 +80,11 @@ export function Footer() {
                 </li>
               </ul>
             </div>
-            {/* Follow Us */}
-            <div>
+
+            {/* Follow Us — DOM order 2nd; mobile: show 2nd (order-2) */}
+            <div className="order-2 md:order-none">
               <h3 className="mb-4 font-semibold text-white">Follow Us</h3>
-              <ul className="space-y-2">
+              <ul className="flex justify-center gap-4 md:flex-col md:gap-0 md:space-y-2">
                 <li>
                   <Link href="#" className="text-sm text-white/70 hover:text-[hsl(var(--ptr-primary))] transition-colors">
                     Instagram
@@ -100,10 +102,11 @@ export function Footer() {
                 </li>
               </ul>
             </div>
-            {/* Contact Us */}
-            <div>
+
+            {/* Contact Us — DOM order 3rd; mobile: show 1st (order-1) */}
+            <div className="order-1 md:order-none">
               <h3 className="mb-4 font-semibold text-white">Contact Us</h3>
-              <ul className="space-y-2 flex flex-col items-center md:items-start">
+              <ul className="flex flex-col items-center md:items-start space-y-2">
                 <li>
                   <a href="mailto:connect@quantara.id" className="mb-2 flex items-center gap-2 text-sm text-white/70 hover:text-[hsl(var(--ptr-primary))] transition-colors">
                     <Mail size={16} />
@@ -112,14 +115,12 @@ export function Footer() {
                 </li>
                 <li className="flex items-center gap-2 text-sm text-white/70 hover:text-[hsl(var(--ptr-primary))]">
                   <Phone size={16} />
-                  <a href="tel:+6281111111">
-                    +62 811 1111 1111
-                  </a>
+                  <a href="tel:+6281111111111">+62 811 1111 1111</a>
                 </li>
               </ul>
             </div>
-          </div>
 
+          </div>
         </div>
 
         {/* Copyright */}

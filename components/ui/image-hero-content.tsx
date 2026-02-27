@@ -18,7 +18,7 @@ export function ImageHeroContent({ image, text }: ImageHeroContentProps) {
   }, [image]);
 
   return (
-    <div className="container mx-auto pt-20">
+    <div className="container mx-auto px-0 sm:px-4 pt-20">
       {/* Image container */}
       <div className="relative h-[calc(100vh-5rem)] overflow-hidden">
         {/* Background Image with smooth fade-in transition */}

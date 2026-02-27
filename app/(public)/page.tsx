@@ -19,7 +19,7 @@ export default function HomePage() {
         />
 
         {/* Intro paragraph */}
-        <div className="container mx-auto py-16">
+        <div className="container mx-auto py-10 md:py-16">
           <MagicText
             text="Founded in 2025, Quantara Strategic operates as both deal-maker and strategic partner enabling clients to unlock value through informed decision-making, curated counterparties, and clear strategic alignment. We bring commercial fluency, regulatory awareness, and a hands-on advisory approach to help clients navigate negotiations, evaluate opportunities, and execute transactions with confidence."
             className="text-2xl font-light leading-snug text-white sm:text-3xl"
