@@ -19,7 +19,7 @@ const shaderConfigs: Record<ShaderStyle, {
   distortion: number
   swirl: number
   swirlIterations: number
-  shape: "checks" | "dots"
+  shape: "checks" | "stripes" | "edge"
   shapeScale: number
   speed: number
   colors: string[]
@@ -41,7 +41,7 @@ const shaderConfigs: Record<ShaderStyle, {
     distortion: 0.22,
     swirl: 0.9,
     swirlIterations: 12,
-    shape: "dots",
+    shape: "stripes",
     shapeScale: 0.1,
     speed: 0.4,
     colors: ["hsl(225, 85%, 10%)", "hsl(230, 100%, 22%)", "hsl(220, 90%, 30%)", "hsl(235, 80%, 15%)"],
@@ -63,7 +63,7 @@ const shaderConfigs: Record<ShaderStyle, {
     distortion: 0.2,
     swirl: 0.8,
     swirlIterations: 14,
-    shape: "dots",
+    shape: "stripes",
     shapeScale: 0.09,
     speed: 0.45,
     colors: ["hsl(230, 80%, 9%)", "hsl(235, 95%, 24%)", "hsl(225, 85%, 35%)", "hsl(240, 75%, 16%)"],
@@ -85,7 +85,7 @@ const shaderConfigs: Record<ShaderStyle, {
     distortion: 0.19,
     swirl: 0.75,
     swirlIterations: 9,
-    shape: "dots",
+    shape: "stripes",
     shapeScale: 0.13,
     speed: 0.5,
     colors: ["hsl(225, 88%, 9%)", "hsl(220, 100%, 20%)", "hsl(215, 90%, 28%)", "hsl(230, 80%, 14%)"],
