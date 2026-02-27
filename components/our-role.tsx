@@ -13,7 +13,7 @@ const images = [
 
 export function OurRole() {
   return (
-    <section id="our-role" className="bg-white pt-20 pb-32">
+    <section id="our-role" className="bg-white py-10 md:py-20">
       <div className="container mx-auto px-4">
         {/* Label */}
         <p className="mb-6 text-sm text-primary/60">Our Role</p>

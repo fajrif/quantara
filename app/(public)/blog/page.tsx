@@ -29,7 +29,7 @@ export default async function MediaPage() {
       />
 
       {/* Articles Grid */}
-      <section className="bg-primary pb-20 px-4">
+      <section className="bg-primary pb-20 px-4 mb-10 md:mb-0">
         <AnimatedDiv id="articles-grid" className="container mx-auto">
           {articles.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

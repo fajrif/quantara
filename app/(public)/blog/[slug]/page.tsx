@@ -53,7 +53,7 @@ export default async function MediaPostPage({ params }: { params: Promise<{ slug
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/5 blur-[100px] rounded-full" />
 
                 {/* Content */}
-                <div className="relative mx-auto max-w-4xl pt-32 pb-16">
+                <div className="relative mx-auto max-w-4xl pt-32 pb-16 px-4 md:px-0">
                     {/* Category Badge */}
                     <div className="mb-6">
                         <span className="inline-block px-3 py-1 border border-white/10 bg-white/5 text-xs text-white/70">
@@ -121,10 +121,10 @@ export default async function MediaPostPage({ params }: { params: Promise<{ slug
                     />
 
                     {/* Back to Media */}
-                    <div className="mt-16 pt-8 border-t border-white/10">
+                    <div className="mt-16 pt-8 border-t border-white/10 flex justify-center md:justify-start">
                         <Link
                             href="/blog"
-                            className="inline-flex items-center gap-2 text-base text-white font-light hover:text-[hsl(var(--ptr-primary))] transition-colors uppercase"
+                            className="inline-flex items-center gap-2 text-sm text-white font-light hover:text-[hsl(var(--ptr-primary))] transition-colors uppercase"
                         >
                             <ArrowLeft size={18} />
                             Back

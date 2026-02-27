@@ -19,7 +19,7 @@ export function WhatWeDo({
               </h2>
             )}
             {description && (
-              <p className="mt-3 max-w-xl font-light leading-relaxed text-white">
+              <p className="mt-3 max-w-xl font-light leading-relaxed text-white mb-10">
                 {description}
               </p>
             )}
