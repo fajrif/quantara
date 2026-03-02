@@ -71,7 +71,7 @@ export async function POST(req: NextRequest) {
             const resend = new Resend(process.env.RESEND_API_KEY)
             try {
                 await resend.emails.send({
-                    from: "Quantara Contact Form <onboarding@resend.dev>",
+                    from: "Quantara Contact Form <connect@quantara.id>",
                     to: contactEmail,
                     subject: `New Inquiry from ${name.trim()}`,
                     html: `
