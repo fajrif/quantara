@@ -70,7 +70,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 5. **Login:**
    - Navigate to `http://localhost:3000/admin`
-   - Email: `admin@quantarastrategic.com`
+   - Email: `admin@quantara.id`
    - Password: `Secret1234!`
 
 ## Next Steps
