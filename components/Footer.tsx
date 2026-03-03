@@ -113,10 +113,6 @@ export function Footer() {
                     <span>connect@quantara.id</span>
                   </a>
                 </li>
-                <li className="flex items-center gap-2 text-sm text-white/70 hover:text-[hsl(var(--ptr-primary))]">
-                  <Phone size={16} />
-                  <a href="tel:+6281111111111">+62 811 1111 1111</a>
-                </li>
               </ul>
             </div>
 

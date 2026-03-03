@@ -37,16 +37,7 @@ export default function TeamPage() {
         {/* Team Cards */}
         <AnimatedDiv id="who-we-are-section-div" delay={0.1}>
           <div className="container mx-auto py-16">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {teamMembers.map((member) => (
-                <BentoCard
-                  key={member.title}
-                  title={member.title}
-                  description={member.description}
-                  Component={() => <TeamCard image={member.image} />}
-                />
-              ))}
-            </div>
+            <p className="text-white/50 font-light text-lg">No team members for now, we're going to add them soon</p>
           </div>
         </AnimatedDiv>
       </div>
