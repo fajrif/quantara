@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import TemporaryOff from "@/components/TemporaryOff"
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' })
 
@@ -56,10 +57,12 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode
 }>) {
+    const isOff = process.env.MAINTENANCE_MODE === 'true'
+
     return (
         <html lang="en" className={inter.variable}>
             <body className={`${inter.className} antialiased`}>
-                {children}
+                {isOff ? <TemporaryOff /> : children}
                 <Analytics />
             </body>
         </html>
