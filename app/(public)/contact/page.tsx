@@ -5,6 +5,7 @@ import Image from "next/image"
 import { ImageHeroContent } from "@/components/ui/image-hero-content"
 import { AnimatedDiv } from "@/components/ui/animated-div"
 import { OurCommitment } from "@/components/our-commitment"
+
 import { useState } from "react"
 
 export default function ContactPage() {

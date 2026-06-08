@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server"
-import { prisma } from "@/lib/prisma"
 import { Resend } from "resend"
 
 // Simple in-memory rate limiter: max 3 requests per IP per 10 minutes
@@ -54,27 +53,19 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: "Message is required (min 10 characters)." }, { status: 400 })
         }
 
-        // Save to database
-        const inquiry = await prisma.inquiry.create({
-            data: {
-                name: name.trim(),
-                email: email.trim().toLowerCase(),
-                company: company?.trim() || null,
-                message: message.trim(),
-                ip,
-            },
-        })
-
-        // Send email notification (non-blocking — don't fail the request if email fails)
+        // Send email notification via Resend
         const contactEmail = process.env.CONTACT_EMAIL ?? "connect@quantara.id"
-        if (process.env.RESEND_API_KEY) {
-            const resend = new Resend(process.env.RESEND_API_KEY)
-            try {
-                await resend.emails.send({
-                    from: "Quantara Contact Form <connect@quantara.id>",
-                    to: contactEmail,
-                    subject: `New Inquiry from ${name.trim()}`,
-                    html: `
+        if (!process.env.RESEND_API_KEY) {
+            console.warn("RESEND_API_KEY not set — email will not be sent")
+            return NextResponse.json({ success: true }, { status: 201 })
+        }
+
+        const resend = new Resend(process.env.RESEND_API_KEY)
+        await resend.emails.send({
+            from: "Quantara Contact Form <connect@quantara.id>",
+            to: contactEmail,
+            subject: `New Inquiry from ${name.trim()}`,
+            html: `
             <h2>New Contact Inquiry</h2>
             <table style="border-collapse:collapse;width:100%">
               <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold">Name</td><td style="padding:8px;border:1px solid #eee">${name.trim()}</td></tr>
@@ -84,13 +75,9 @@ export async function POST(req: NextRequest) {
               <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold">Submitted</td><td style="padding:8px;border:1px solid #eee">${new Date().toLocaleString("id-ID", { timeZone: "Asia/Jakarta" })} WIB</td></tr>
             </table>
           `,
-                })
-            } catch (emailErr) {
-                console.error("Email send failed (inquiry still saved):", emailErr)
-            }
-        }
+        })
 
-        return NextResponse.json({ success: true, id: inquiry.id }, { status: 201 })
+        return NextResponse.json({ success: true }, { status: 201 })
     } catch (err) {
         console.error("Inquiry submission error:", err)
         return NextResponse.json({ error: "Something went wrong. Please try again." }, { status: 500 })
