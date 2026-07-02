@@ -1,0 +1,15 @@
+{
+  "ci": {
+    "collect": {
+      "numberOfRuns": 3,
+      "settings": {
+        "preset": "desktop",
+        "chromeFlags": "--no-sandbox --disable-dev-shm-usage --disable-gpu"
+      }
+    },
+    "upload": {
+      "target": "filesystem",
+      "outputDir": ".ai/performance/latest/desktop"
+    }
+  }
+}

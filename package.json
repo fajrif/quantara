@@ -7,10 +7,21 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "eslint .",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "lighthouse:mobile": "lhci autorun --config=lighthouserc.mobile.json --collect.startServerCommand=\"npm run start\" --collect.url=http://localhost:3000/ --collect.url=http://localhost:3000/about --collect.url=http://localhost:3000/blog --collect.url=http://localhost:3000/contact --collect.url=http://localhost:3000/services --collect.url=http://localhost:3000/team",
+    "lighthouse:desktop": "lhci autorun --config=lighthouserc.desktop.json --collect.startServerCommand=\"npm run start\" --collect.url=http://localhost:3000/ --collect.url=http://localhost:3000/about --collect.url=http://localhost:3000/blog --collect.url=http://localhost:3000/contact --collect.url=http://localhost:3000/services --collect.url=http://localhost:3000/team",
+    "lighthouse:report": "npm run lighthouse:mobile && npm run lighthouse:desktop && node scripts/lighthouse-summary.mjs"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "8.5.16"
+    },
+    "@hono/node-server": "1.19.14",
+    "tmp": "0.2.7",
+    "uuid": "11.1.1"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -94,6 +105,7 @@
     "zod": "3.25.76"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
     "@tailwindcss/postcss": "^4.1.9",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^22",
