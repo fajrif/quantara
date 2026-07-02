@@ -14,7 +14,7 @@ export default function HomePage() {
       <section id="banner-section" className="bg-primary">
         {/* Hero Section with Image Background */}
         <ImageHeroContent
-          image="/images/banner1.png"
+          image="/images/banner1.webp"
           text="Connecting Capital With Strategy"
         />
 

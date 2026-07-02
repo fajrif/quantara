@@ -14,7 +14,7 @@ export default function AboutPage() {
       <section id="banner-section" className="bg-primary">
         {/* Hero Section with Image Background */}
         <ImageHeroContent
-          image="/images/banner2.png"
+          image="/images/banner2.webp"
           text="About Quantara Strategic"
         />
         {/* Who We Are Section */}

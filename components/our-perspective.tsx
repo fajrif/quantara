@@ -21,6 +21,7 @@ export function OurPerspective() {
             src="/images/sky-look.png"
             alt="Perspective"
             fill
+            sizes="(max-width: 768px) 100vw, 60vw"
             className="object-cover object-center"
             priority={false}
           />

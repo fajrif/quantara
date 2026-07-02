@@ -52,7 +52,7 @@ export default function ContactPage() {
       <section id="banner-section" className="bg-primary">
         {/* Hero Section with Image Background */}
         <ImageHeroContent
-          image="/images/banner3.png"
+          image="/images/banner3.webp"
           text="Lets Get in Touch"
         />
       </section>
@@ -135,7 +135,7 @@ export default function ContactPage() {
                     alt="Quantara"
                     width={130}
                     height={40}
-                    className="object-contain"
+                    className="h-10 w-auto object-contain"
                   />
                 </div>
                 <h2 className="text-2xl font-medium text-white mb-1 tracking-tight uppercase">

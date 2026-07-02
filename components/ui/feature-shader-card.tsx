@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useRef, useEffect } from "react"
+import React, { useRef, useEffect, useState } from "react"
 import { Warp } from "@paper-design/shaders-react"
 
 export type ShaderStyle = "style1" | "style2" | "style3" | "style4" | "style5" | "style6" | "style7"
@@ -115,6 +115,32 @@ export function FeatureShaderCard({
   const cardRef = useRef<HTMLDivElement>(null)
   const spotlightRef = useRef<HTMLDivElement>(null)
 
+  // Only mount the WebGL shader while the card is on (or near) screen. All 7
+  // cards are below the fold, so this keeps them out of the initial-load work
+  // (the main driver of Total Blocking Time) and caps concurrent GL contexts.
+  const [inView, setInView] = useState(false)
+  const [reducedMotion, setReducedMotion] = useState(false)
+
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const update = () => setReducedMotion(media.matches)
+    update()
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
+  }, [])
+
+  useEffect(() => {
+    const card = cardRef.current
+    if (!card) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { rootMargin: '200px' }
+    )
+    observer.observe(card)
+    return () => observer.disconnect()
+  }, [])
+
   useEffect(() => {
     const card = cardRef.current
     const spotlight = spotlightRef.current
@@ -144,22 +170,29 @@ export function FeatureShaderCard({
 
   return (
     <div ref={cardRef} className={`relative overflow-hidden border border-transparent transition-colors duration-300 hover:border-white ${className}`}>
-      {/* Shader background */}
-      <div className="absolute inset-0">
-        <Warp
-          style={{ height: "100%", width: "100%" }}
-          proportion={config.proportion}
-          softness={config.softness}
-          distortion={config.distortion}
-          swirl={config.swirl}
-          swirlIterations={config.swirlIterations}
-          shape={config.shape}
-          shapeScale={config.shapeScale}
-          scale={1}
-          rotation={0}
-          speed={config.speed}
-          colors={config.colors}
-        />
+      {/* Shader background — static gradient always paints (instant, cheap);
+          the animated WebGL shader mounts only while the card is in view and
+          motion is allowed. */}
+      <div
+        className="absolute inset-0"
+        style={{ background: `linear-gradient(135deg, ${config.colors.join(", ")})` }}
+      >
+        {inView && !reducedMotion && (
+          <Warp
+            style={{ height: "100%", width: "100%" }}
+            proportion={config.proportion}
+            softness={config.softness}
+            distortion={config.distortion}
+            swirl={config.swirl}
+            swirlIterations={config.swirlIterations}
+            shape={config.shape}
+            shapeScale={config.shapeScale}
+            scale={1}
+            rotation={0}
+            speed={config.speed}
+            colors={config.colors}
+          />
+        )}
       </div>
 
       {/* Spotlight overlay */}

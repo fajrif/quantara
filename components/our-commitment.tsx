@@ -13,7 +13,7 @@ export function OurCommitment({ title = "", desc = "" }: { title?: string, desc?
       </div>
       <div className="mt-16 w-full">
         <Image
-          src="/images/buildings.png"
+          src="/images/buildings.webp"
           alt="Buildings"
           width={1920}
           height={800}

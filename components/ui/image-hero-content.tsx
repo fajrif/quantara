@@ -1,8 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { TextEffect } from '@/components/ui/text-effect';
 
 interface ImageHeroContentProps {
@@ -11,37 +10,29 @@ interface ImageHeroContentProps {
 }
 
 export function ImageHeroContent({ image, text }: ImageHeroContentProps) {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    setLoaded(false);
-  }, [image]);
-
   return (
     <div className="container mx-auto px-0 sm:px-4 pt-20">
       {/* Image container */}
       <div className="relative h-[calc(100vh-5rem)] overflow-hidden">
-        {/* Background Image with smooth fade-in transition */}
-        <AnimatePresence>
+        {/* Background Image — painted immediately at full opacity so it counts as LCP */}
+        <div className="absolute inset-0">
+          <Image
+            src={image}
+            alt={text}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          {/* Dark overlay for text readability — eases in for a subtle entrance */}
           <motion.div
-            key={image}
-            className="absolute inset-0"
-            initial={{ opacity: 0, scale: 1.04 }}
-            animate={loaded ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.04 }}
+            className="absolute inset-0 bg-black/30"
+            aria-hidden="true"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 1.2, ease: 'easeOut' }}
-          >
-            <Image
-              src={image}
-              alt={text}
-              fill
-              priority
-              className="object-cover object-center"
-              onLoad={() => setLoaded(true)}
-            />
-            {/* Dark overlay for text readability */}
-            <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
-          </motion.div>
-        </AnimatePresence>
+          />
+        </div>
 
         {/* Centered text */}
         <div className="relative z-10 flex h-full items-center justify-center px-8 text-center">
